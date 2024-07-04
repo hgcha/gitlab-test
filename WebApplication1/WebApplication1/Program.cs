@@ -24,4 +24,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.Map("/hello", app => {
+    app.Run(async context => {
+        await context.Response.WriteAsync("Hello World!");
+    });
+});
+
 app.Run();
