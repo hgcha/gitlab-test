@@ -30,4 +30,10 @@ app.Map("/hello", app => {
     });
 });
 
+app.Map("/World", app => {
+    app.Run(async context => {
+        await context.Response.WriteAsync("World!");
+    });
+});
+
 app.Run();
